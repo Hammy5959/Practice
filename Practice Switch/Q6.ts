@@ -5,7 +5,7 @@ function suggestClothes(temprature: number) {
     case temprature < 0:
       return `It's cold outside. You should wear a warm jacket, gloves, and a hat.`;
     case temprature < 10:
-      return `It's cool outside. You should wear a light jacket or sweater.`;
+      return `It's cold outside. You should wear heavt clothes like jacket and gloves.`;
     case temprature < 20:
       return `It's cool outside. You should wear jacket or a gloves and a hat.`;
     case temprature < 30:
