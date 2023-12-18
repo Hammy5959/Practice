@@ -4,21 +4,14 @@
  Call show_magicians() with each array to show that you have one array of the original
   names and one array with the Great added to each magician’s name.`;
 
-function make_great(magicians: string[]) {
-  var great_magicians = [];
-  for (let i = 0; i < magicians.length; i++) {
-    great_magicians.push(`the Great, ${magicians[i]}`);
-  }
-  return great_magicians;
+function make_great1(magicians: string[]) {
+  return magicians.map((magician) => `The Great ${magician}`);
 }
-
-function show_magicians3(magicians: string[]) {
-  for (let i = 0; i < magicians.length; i++) {
-    console.log(magicians[i]);
-  }
+function show_magicians(magicians: string[]) {
+  magicians.forEach((magician) => console.log(magician));
 }
+var magiciansName: string[] = ["Edward", "David", "Alice", "Anthony"];
+show_magicians(magiciansName);
+show_magicians(make_great1(magiciansName));
 
-var magicians = ["Edward", "David", "Alice", "Anthony"];
-var great_magicians = make_great(magicians);
-show_magicians3(magicians);
-show_magicians3(great_magicians);
+export {};

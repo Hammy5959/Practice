@@ -4,16 +4,12 @@ function called make_great() that modifies the array of magicians by adding the
  list has actually been modified.`;
 
 function make_great1(magicians: string[]) {
-  for (let i = 0; i < magicians.length; i++) {
-    magicians[i] = ("The Great" + " " + magicians[i]);
-  }
+  return magicians.map((magician) => `The Great ${magician}`);
 }
-function show_magicians1(magicians: string[]) {
-  for (let i = 0; i < magicians.length; i++) {
-    console.log(magicians[i]);
-  }
+function show_magicians(magicians: string[]) {
+  magicians.forEach((magician) => console.log(magician));
 }
-var magicians = ["Edward", "David", "Alice", "Anthony"];
+var magiciansName: string[] = ["Edward", "David", "Alice", "Anthony"];
+show_magicians(make_great1(magiciansName));
 
-make_great1(magicians);
-show_magicians1(magicians);
+export {};

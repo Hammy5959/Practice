@@ -2,8 +2,9 @@
 show_magicians(), which prints the name of each magician in the array.`;
 
 function show_magicians(magicians: string[]) {
-  for (let i = 0; i < magicians.length; i++) {
-    console.log(magicians[i]);
-  }
+  magicians.forEach((magician) => console.log(magician));
 }
-show_magicians(["Edward", "David", "Alice", "Anthony"]);
+var magiciansName: string[] = ["Edward", "David", "Alice", "Anthony"];
+show_magicians(magiciansName);
+
+export {};

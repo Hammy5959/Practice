@@ -6,4 +6,5 @@ function show_magicians(magicians: string[]) {
 }
 var magicians: string[] = ["Edward", "David", "Alice", "Anthony"];
 show_magicians(magicians);
+
 export {};
