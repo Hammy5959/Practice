@@ -15,8 +15,8 @@ let worldCupSemiFinalTeams = {
     team2: "England",
     team3: "NewZealand",
     favTeam: {
-        favteam: "Pakistan"
+        favteam: "Pakistan",
     },
-    totalTeams: 4
+    totalTeams: 4,
 };
 console.log(`Team1 is ${worldCupSemiFinalTeams.team1} Team2 is ${worldCupSemiFinalTeams.team2} Team3 is ${worldCupSemiFinalTeams.team3} My Team is ${worldCupSemiFinalTeams.favTeam.favteam} And Total Teams is ${worldCupSemiFinalTeams.totalTeams} `);
