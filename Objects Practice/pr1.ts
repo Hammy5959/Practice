@@ -5,16 +5,18 @@ type info = {
 };
 
 function carinfo(manufacture: string, carname: string, sale: boolean): info {
-  let info :info= {
+  let info: info = {
     manufacture: manufacture,
     carname: carname,
     sale: sale,
-};
-console.log(`Car Name: ${info.manufacture}\nManufacture: ${info.carname}\nIs Sale? ${info.sale}`)
+  };
+  console.log(
+    `Car Name: ${info.manufacture}\nManufacture: ${info.carname}\nIs Sale? ${info.sale}`
+  );
 
-return info;
+  return info;
 }
-carinfo("Honda","Civic",true)
+carinfo("Honda", "Civic", true);
 
 interface Person {
   name: string;
