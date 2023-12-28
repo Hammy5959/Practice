@@ -1,12 +1,12 @@
 //User Provided Age
 function providedAge(age: number) {
   switch (true) {
-    case age >= 0 && age <= 12:
+    case age >= 0 && age <= 15:
       return "Person is Child";
-    case age >= 13 && age <= 19:
+    case age >= 15 && age <= 19:
       return "Person is Teenager";
     default:
       return "Person is Adult";
   }
 }
-console.log(providedAge(22));
+console.log(providedAge(14));

@@ -1,28 +1,16 @@
 "use strict";
-//Stores Car Info
-function storeCarInfo(manufacturer, modelName, ...optionalInfo) {
-    const carInfo = {
-        manufacturer: manufacturer,
-        modelName: modelName,
-    };
-    optionalInfo.forEach((info) => {
-        Object.keys(info).forEach((key) => {
-            carInfo[key] = info[key];
-        });
-    });
-    return carInfo;
-}
-var car1 = storeCarInfo("Toyota", "Camry", { color: "blue" }, { year: 2022 });
-console.log(car1);
-function carInfo(modle, manufacturer, ...args) {
-    let car = {
-        modle: modle,
-        manufacturer: manufacturer,
-    };
-    for (let i = 0; i < args.length; i += 2) {
-        // car[args[i]] = args[i + 1];
-    }
+`Cars: Write a function that stores information about a car in a Object. The function should 
+always receive a manufacturer and a model name. It should then accept an arbitrary number of 
+keyword arguments. Call the function with the required information and two other name-value 
+pairs, such as a color or an optional feature. Print the Object that's returned to make sure
+ all the information was stored correctly.`;
+function createCar(manufacturer, modelName, options) {
+    const car = Object.assign({ manufacturer,
+        modelName }, options);
     return car;
 }
-let mycar = carInfo("Toyota", "Corolla", "Color", "Red", "Year", 2012);
-console.log(mycar);
+const myCar = createCar("Toyota", "Camry", {
+    color: "blue",
+    optionalFeature: "sunroof",
+});
+console.log(myCar);

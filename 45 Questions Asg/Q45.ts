@@ -4,32 +4,29 @@ keyword arguments. Call the function with the required information and two other
 pairs, such as a color or an optional feature. Print the Object that's returned to make sure
  all the information was stored correctly.`;
 
-function storeCarInfo(
+ interface Car {
+  manufacturer: string;
+  modelName: string;
+  [key: string]: any;
+}
+
+function createCar(
   manufacturer: string,
   modelName: string,
-  ...args: any[]
-): object {
-  let car = {
-    manufacturer: manufacturer,
-    model: modelName,
+  options: Record<string, any>
+): Car {
+  const car: Car = {
+    manufacturer,
+    modelName,
+    ...options,
   };
-  for (let i = 0; i < args.length; i += 2) {
-    car[args[i]] = args[i + 1];
-  }
+
   return car;
 }
 
-let car1 = storeCarInfo("Toyota", "Camry", "color", "red", "year", 2022);
-let car2 = storeCarInfo(
-  "Honda",
-  "Civic",
-  "color",
-  "blue",
-  "year",
-  2021,
-  "sunroof",
-  true
-);
+const myCar = createCar("Toyota", "Camry", {
+  color: "blue",
+  optionalFeature: "sunroof",
+});
 
-console.log(car1);
-console.log(car2);
+console.log(myCar);

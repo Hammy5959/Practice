@@ -6,23 +6,31 @@
   store the number of tracks on an album. If the calling line includes a value for the number
    of tracks, add that value to the album's Object. Make at least one new function call that 
    includes the number of tracks on an album.`;
-
-function make_album(
-  artistName: string,
-  albumTitle: string,
-  numtracks: number
-): object {
-  let album = {
-    artistName: artistName,
-    albumTitle: albumTitle,
-    numtracks: numtracks,
-  };
-  return album;
-}
-
-let album1 = make_album("Taylor Swift", "Red", 1);
-let album2 = make_album("Adele", "21", 2);
-let album3 = make_album("Ed Sheeran", " (Divide)", 3);
-console.log(album1);
-console.log(album2);
-console.log(album3);
+   interface musicAlbum {
+    artisName: string;
+    albumTitle: string;
+    numtracks?: number;
+  }
+  function make_album(
+    artisName: string,
+    albumTitle: string,
+    numtracks?: number
+  ): musicAlbum {
+    let album: musicAlbum = {
+      artisName: artisName,
+      albumTitle: albumTitle,
+    };
+    if (numtracks) {
+      album["numtracks"] = numtracks;
+    }
+  
+    return album;
+  }
+  
+  let album1:musicAlbum=make_album("Atif Aslam", "Coke Studio");
+  let album2:musicAlbum=make_album("Arijit Singh", "Song", 3);
+  let album3:musicAlbum=make_album("Nusrat","Qawali",15)
+  console.log(album1)
+  console.log(album2)
+  console.log(album3)
+  

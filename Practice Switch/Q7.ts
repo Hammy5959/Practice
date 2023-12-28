@@ -1,6 +1,6 @@
 //Check if te given if divisible
 function checkNumberDivisible(givenNumber: number) {
-  switch (true) {
+  switch (false) {
     case givenNumber % 3 === 0:
       return `the number is divisible by 3`;
     case givenNumber % 5 === 0:
