@@ -1,9 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 `Write a function that takes an array of numbers and returns the largest number in the array.`;
-function numArray(num) {
-    for (let i = 0; i < num.length; i++)
-        console.log(num[i]);
+function findLargestNumber(arr) {
+    let largestNumber = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largestNumber) {
+            largestNumber = arr[i];
+        }
+    }
+    return largestNumber;
 }
-let numbers = [2, 4, 6, 8, 12, 34, 56, 78, 90, 23, 2, 23];
-numArray(numbers);
+let numbersArray = [23, 23, 4, 5, 6, 67, 7, 4, 56, 57, 4, 6];
+console.log(findLargestNumber(numbersArray));
