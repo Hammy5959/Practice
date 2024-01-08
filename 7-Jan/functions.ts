@@ -9,14 +9,14 @@ function sum(x: number, y: number): number {
 
 //Anonymous Function
 //in anonymous functions, function names empty
+//Anonymous function with explicit type
 let add1 = function (x: number, y: number): number {
   return x + y;
 };
 console.log(add1(12, 56));
 //Arrow functions
-//Anonymous function with explicit type
 //ES6 Feature =>
-//Start with let / const funcyionName = ()=>{}
+//Start with let / const functionName = ()=>{}
 let add2: (x: number, y: number) => number = function (
   x: number,
   y: number
@@ -27,6 +27,7 @@ let add2: (x: number, y: number) => number = function (
 //Arrow functions
 //Lamda Functions does not return
 let add3 = (a: number, b: number) => a + b;
+console.log(add3(12,56))
 
 function powerFunction(a: number, b: number, c: number): number {
   let sum = a ** b;
