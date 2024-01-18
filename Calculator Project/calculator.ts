@@ -1,70 +1,71 @@
+import chalkAnimation from "chalk-animation";
 import inquirer from "inquirer";
-import chalk from "chalk"
-import chalkAnimation from "chalk-animation"
+import chalk from "chalk";
 
-const sleep=()=>{
-  return new Promise((res)=>{
-    setTimeout(res,2000)
-  })
+const sleep = () => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 2000);
+  });
+};
+async function welcome() {
+  let rainbowTitle = chalkAnimation.rainbow(
+    `Hamid Project\n--Lets start Calculation--`
+  );
+  await sleep();
+  rainbowTitle.stop();
 }
-async function welcome(){
-  let rainbowTitle= chalkAnimation.karaoke(`--Lets start Calculation--`)
-  await sleep()
-  rainbowTitle.stop()
-}
-welcome()
-async function calculator() {
-  await inquirer
+welcome();
+function main() {
+  inquirer
     .prompt([
       {
-        type: "list",
-        name: "operator",
-        message: "Enter your operator",
-        choices: ["Addition", "Substract", "Multiplication", "Division"],
-      },
-      {
-        type: "number",
+        type: "input",
         name: "num1",
         message: "Enter your first number",
       },
       {
-        type: "number",
+        type: "input",
         name: "num2",
         message: "Enter your second number",
       },
+      {
+        type: "list",
+        name: "operator",
+        message: "Enter Your Operator",
+        choices: ["Addition", "Substract", "Multiplication", "Division"],
+      },
     ])
     .then((answers) => {
-      //console.log(answers)
+      const { operator, num1, num2 } = answers;
       if (answers.operator == "Addition") {
-        console.log(
-          `${answers.num1} + ${answers.num2} = ${answers.num1 + answers.num2}`
-        );
+        Addition(Number(num1), Number(num2));
       } else if (answers.operator == "Substract") {
-        console.log(
-          `${answers.num1} - ${answers.num2} = ${answers.num1 - answers.num2}`
-        );
+        Substract(Number(num1), Number(num2));
       } else if (answers.operator == "Multiplication") {
-        console.log(
-          `${answers.num1} * ${answers.num2} = ${answers.num1 * answers.num2}`
-        );
+        Multiplication(Number(num1), Number(num2));
       } else if (answers.operator == "Division") {
-        console.log(
-          `${answers.num1} / ${answers.num2} = ${answers.num1 / answers.num2}`
-        );
+        Division(Number(num1), Number(num2));
+      } else {
+        console.log("Invailid operator");
       }
     });
 }
-calculator()
 
-async function startAgain(){
-  do{
-    await calculator()
-    var again = await inquirer
-    .prompt({
-      type:"input",
-      name:"restart",
-      message:"Do you want to continue? press y or n"
-    })
-  }while(again.restart=="Y"||again.restart=="y"||again.restart=="yes"||again.restart=="YES")
+function Addition(num1: number, num2: number) {
+  const result = num1 + num2;
+  console.log(chalk.green(`Sum: ${num1} + ${num2} =  ${result}`));
 }
-startAgain()
+function Substract(num1: number, num2: number) {
+  const result = num1 - num2;
+  console.log(chalk.red(`Substract:${num1} - ${num2} = ${result}`));
+}
+function Multiplication(num1: number, num2: number) {
+  const result = num1 * num2;
+  console.log(chalk.blue(`Multiply:${num1} * ${num2} = ${result}`));
+}
+function Division(num1: number, num2: number) {
+  const result = num1 / num2;
+  console.log(chalk.yellow(`Division:${num1} / ${num2} = ${result}`));
+}
+main();
+welcome();
