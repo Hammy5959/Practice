@@ -1,17 +1,6 @@
-import chalkAnimation from "chalk-animation";
 import inquirer from "inquirer";
 import chalk from "chalk";
-const sleep = () => {
-    return new Promise((resolve) => {
-        setTimeout(resolve, 2000);
-    });
-};
-async function welcome() {
-    let rainbowTitle = chalkAnimation.rainbow(`Hamid Project\n--Lets start Calculation--`);
-    await sleep();
-    rainbowTitle.stop();
-}
-welcome();
+console.log(chalk.black("Develp By Sheikh Hamid"));
 function main() {
     inquirer
         .prompt([
@@ -28,8 +17,8 @@ function main() {
         {
             type: "list",
             name: "operator",
-            message: "Enter Your Operator",
             choices: ["Addition", "Substract", "Multiplication", "Division"],
+            message: "Enter Your Operator",
         },
     ])
         .then((answers) => {
@@ -53,11 +42,11 @@ function main() {
 }
 function Addition(num1, num2) {
     const result = num1 + num2;
-    console.log(chalk.bold.bgBlack(`Sum: ${num1} + ${num2} =  ${result}`));
+    console.log(chalk.green(`Sum: ${num1} + ${num2} =  ${result}`));
 }
 function Substract(num1, num2) {
     const result = num1 - num2;
-    console.log(chalk.white(`Substract:${num1} - ${num2} = ${result}`));
+    console.log(chalk.red(`Substract:${num1} - ${num2} = ${result}`));
 }
 function Multiplication(num1, num2) {
     const result = num1 * num2;
@@ -68,4 +57,3 @@ function Division(num1, num2) {
     console.log(chalk.yellow(`Division:${num1} / ${num2} = ${result}`));
 }
 main();
-welcome();

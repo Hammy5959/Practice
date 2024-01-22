@@ -1,20 +1,6 @@
-import chalkAnimation from "chalk-animation";
 import inquirer from "inquirer";
 import chalk from "chalk";
-
-const sleep = () => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, 2000);
-  });
-};
-async function welcome() {
-  let rainbowTitle = chalkAnimation.rainbow(
-    `Hamid Project\n--Lets start Calculation--`
-  );
-  await sleep();
-  rainbowTitle.stop();
-}
-welcome();
+console.log(chalk.black("Develp By Sheikh Hamid"));
 function main() {
   inquirer
     .prompt([
@@ -31,8 +17,8 @@ function main() {
       {
         type: "list",
         name: "operator",
-        message: "Enter Your Operator",
         choices: ["Addition", "Substract", "Multiplication", "Division"],
+        message: "Enter Your Operator",
       },
     ])
     .then((answers) => {
@@ -67,5 +53,5 @@ function Division(num1: number, num2: number) {
   const result = num1 / num2;
   console.log(chalk.yellow(`Division:${num1} / ${num2} = ${result}`));
 }
+
 main();
-welcome();
