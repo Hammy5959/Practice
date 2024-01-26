@@ -7,35 +7,35 @@
 //appropriate color alien
 //Alien Color #3
 //Version1 #Green
-var alienColor$ = "green";
-if (alienColor$ === "green") {
+var alienColor1 = "green";
+if (alienColor1 === "green") {
     console.log("you just earned 5 points");
 }
-else if (alienColor$ === "yellow") {
+else if (alienColor1 === "yellow") {
     console.log("you just earned 10 points");
 }
-else if (alienColor$ === "red") {
+else if (alienColor1 === "red") {
     console.log("you just earned 15 points");
 }
 //Version2 #Yellow
-var alienColor$ = "yellow";
-if (alienColor$ === "green") {
+var alienColor2 = "yellow";
+if (alienColor2 === "green") {
     console.log("you just earned 5 points");
 }
-else if (alienColor$ === "yellow") {
+else if (alienColor2 === "yellow") {
     console.log("you just earned 10 points");
 }
-else if (alienColor$ === "red") {
+else if (alienColor2 === "red") {
     console.log("you just earned 15 points");
 }
 //Version3 #Red
-var alienColor$ = "red";
-if (alienColor$ === "green") {
+var alienColor3 = "red";
+if (alienColor3 === "green") {
     console.log("you just earned 5 points");
 }
-else if (alienColor$ === "yellow") {
+else if (alienColor3 === "yellow") {
     console.log("you just earned 10 points");
 }
-else if (alienColor$ === "red") {
+else if (alienColor3 === "red") {
     console.log("you just earned 15 points");
 }
